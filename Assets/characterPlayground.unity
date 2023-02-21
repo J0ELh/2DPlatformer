@@ -427,7 +427,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.34191176, g: 0.7264151, b: 0.044544343, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {fileID: 11400000, guid: 59a1958e16bb40642a4b7827603b635b, type: 2}
-  maxSpeed: 4
+  maxSpeed: 7
   maxAcceleration: 35
   maxAirAcceleration: 20
 --- !u!68 &1468030341

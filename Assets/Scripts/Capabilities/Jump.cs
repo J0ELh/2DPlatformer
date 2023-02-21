@@ -6,7 +6,7 @@ public class Jump : MonoBehaviour {
     
     [SerializeField] private InputController input = null;
     [SerializeField, Range(0f, 10f)] private float jumpHeight = 3f;
-    [SerializeField, Range(0, 5)] private int maxAirJumps = 1; //number of jumps we can do once in the air
+    [SerializeField, Range(0, 5)] private int maxAirJumps = 0; //number of jumps we can do once in the air
     [SerializeField, Range(0f, 5f)] private float downwardMovementMultiplier = 3f;
     [SerializeField, Range(0f, 5f)] private float upwardMovementMultiplier = 1.7f;
 
@@ -59,13 +59,17 @@ public class Jump : MonoBehaviour {
     }
 
     private void JumpAction() {
+        Debug.Log(onGround);
         if (onGround || jumpPhase < maxAirJumps) {
             jumpPhase += 1;
             float jumpSpeed = Mathf.Sqrt(-2f * Physics2D.gravity.y * jumpHeight); //calculate jumpspeed with formula using gravity and desired height of jump
             if (velocity.y > 0f) {
                 jumpSpeed = Mathf.Max(jumpSpeed - velocity.y, 0f);
-            }
-            velocity.y = jumpSpeed;
+            } 
+            //else if (velocity.y < 0f) {
+              //  jumpSpeed += Mathf.Abs(body.velocity.y);
+            //}
+            velocity.y += jumpSpeed;
 
         }
     }
