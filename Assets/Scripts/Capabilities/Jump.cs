@@ -8,7 +8,7 @@ public class Jump : MonoBehaviour {
     [SerializeField, Range(0f, 10f)] private float jumpHeight = 3f;
     [SerializeField, Range(0, 5)] private int maxAirJumps = 0; //number of jumps we can do once in the air
     [SerializeField, Range(0f, 5f)] private float downwardMovementMultiplier = 3f;
-    [SerializeField, Range(0f, 5f)] private float upwardMovementMultiplier = 1.7f;
+    [SerializeField, Range(0f, 5f)] private float upwardMovementMultiplier = 1.7f; //this decides how high you can jump. Making it smaller makes you jump higher for some reason
 
     private Rigidbody2D body;
     private Ground ground;
@@ -59,10 +59,20 @@ public class Jump : MonoBehaviour {
     }
 
     private void JumpAction() {
-        Debug.Log(onGround);
+        //Debug.Log(onGround); print whether it thinks it's touching the ground
         if (onGround || jumpPhase < maxAirJumps) {
             jumpPhase += 1;
-            float jumpSpeed = Mathf.Sqrt(-2f * Physics2D.gravity.y * jumpHeight); //calculate jumpspeed with formula using gravity and desired height of jump
+            float jumpSpeed;
+            if (!onGround) //if doing air jump give bigger impulse
+            {
+                Debug.Log("worked");
+                jumpSpeed = Mathf.Sqrt(-2f * (Physics2D.gravity.y   *   2) * jumpHeight); //calculate jumpspeed with formula using gravity and desired height of jump
+                //for doing * 2 to double impulse value
+            } else
+            {
+                jumpSpeed = Mathf.Sqrt(-2f * Physics2D.gravity.y * jumpHeight); //calculate jumpspeed with formula using gravity and desired height of jump
+            }
+            
             if (velocity.y > 0f) {
                 jumpSpeed = Mathf.Max(jumpSpeed - velocity.y, 0f);
             } 
