@@ -65,7 +65,7 @@ public class Jump : MonoBehaviour {
             float jumpSpeed;
             if (!onGround) //if doing air jump give bigger impulse
             {
-                Debug.Log("worked");
+                //Debug.Log("worked");
                 jumpSpeed = Mathf.Sqrt(-2f * (Physics2D.gravity.y   *   2) * jumpHeight); //calculate jumpspeed with formula using gravity and desired height of jump
                 //for doing * 2 to double impulse value
             } else
