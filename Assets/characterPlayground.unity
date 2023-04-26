@@ -487,7 +487,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1468030338}
-  smoothSpeed: 0.125
 --- !u!1 &732864734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,7 +1061,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.98}
+  m_Size: {x: 0.8, y: 0.9}
   m_EdgeRadius: 0
 --- !u!212 &1468030337
 SpriteRenderer:
@@ -1156,8 +1155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {fileID: 11400000, guid: 59a1958e16bb40642a4b7827603b635b, type: 2}
-  maxSpeed: 7
-  maxAcceleration: 35
+  maxSpeed: 10
+  maxAcceleration: 50
   maxAirAcceleration: 20
 --- !u!68 &1468030341
 EdgeCollider2D:
