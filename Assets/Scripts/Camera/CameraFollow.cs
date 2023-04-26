@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /**
@@ -9,20 +7,17 @@ using UnityEngine;
  * */
 public class CameraFollow : MonoBehaviour
 {
+    private Vector3 offset = new Vector3(0f, 0f, -10f);
+    private float smoothTime = 0.25f;
+    private Vector3 velocity = Vector3.zero;
 
-    public Transform followTransform;
-    private Vector3 smoothPos;
-    public float smoothSpeed = 0.5f; //rate at which we're smoothing camera movement
+    [SerializeField] private Transform target;
 
-
-    // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
-        //this.transform.position = new Vector3(followTransform.position.x, followTransform.position.y, this.transform.position.z);
-        smoothPos = Vector3.Lerp(this.transform.position, new Vector3(followTransform.position.x, followTransform.position.y, this.transform.position.z), smoothSpeed);
-        this.transform.position = smoothPos;
-        //Lerp is supposed to smooth the camera
-        //updated position = change the vectors to this new vector(match the followed object x, match the followed object x, keep z because 2D game)
-
+        Vector3 targetPostition = target.position + offset;
+        transform.position = Vector3.SmoothDamp(transform.position, targetPostition, ref velocity, smoothTime);
     }
+
+
 }
