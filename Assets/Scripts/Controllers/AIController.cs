@@ -25,7 +25,7 @@ public class AIController : InputController
         return true;
     }
 
-    public override float RetrieveMoveInput() {        
+    public override float RetrieveMoveInput() { 
         if (Time.time > nextSwitch) { 
             nextSwitch = Time.time + switchRate;
             movement =  movement * (-1f);
