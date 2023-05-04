@@ -1,5 +1,5 @@
-# 2D Platformer Video Game
+# Super Mario
 Made by Joel, Christina, and Tony
 
 Current progress: 
-![image](https://user-images.githubusercontent.com/109251338/221480871-e205a320-aee3-4d4e-bcb0-280b4e236247.png)
+![image](https://user-images.githubusercontent.com/109251338/236108789-e9ca7e1e-fb44-475f-868c-48a44de387c9.png)
