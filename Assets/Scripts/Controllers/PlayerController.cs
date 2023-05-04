@@ -6,11 +6,14 @@ using UnityEngine;
 
 public class PlayerController : InputController
 {
-    public override bool RetrieveJumpInput() {
+    public override bool RetrieveJumpInput()
+    {
         return Input.GetButtonDown("Jump");
     }
 
-    public override float RetrieveMoveInput() {
+    public override float RetrieveMoveInput()
+    {
         return Input.GetAxisRaw("Horizontal");
     }
+
 }
