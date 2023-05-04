@@ -1,4 +1,4 @@
-# Super Mario
+# Super Mario Bros.
 Made by Joel, Christina, and Tony
 
 Current progress: 
