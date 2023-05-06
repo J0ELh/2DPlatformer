@@ -16,7 +16,7 @@ public class MovePlant : MonoBehaviour
     void Start()
     {
         baseHeight = transform.position;
-        targetHeight = transform.position + new Vector3(0f, 2f, 0f);
+        targetHeight = transform.position + new Vector3(0f, 1.2f, 0f);
 
 
         Debug.Log(baseHeight);
@@ -31,11 +31,13 @@ public class MovePlant : MonoBehaviour
         if (transform.position.y > targetHeight.y && !goingDown) {
             speed = -speed;
             goingDown = true;
+            doneRandomWait = false;
+            randomWaitTime =  (900000f  + Random.Range(0f, 20* 90000f)) * Time.deltaTime; //assuming probably refresh rate around 60hz
             // Debug.Log("greater");
         }
         else if (transform.position.y < baseHeight.y && goingDown) {
             doneRandomWait = false;
-            randomWaitTime =  (1800000f  + Random.Range(0f, 20* 180000f)) * Time.deltaTime; //assuming probably refresh rate around 60hz
+            randomWaitTime =  (900000f  + Random.Range(0f, 20* 90000f)) * Time.deltaTime; //assuming probably refresh rate around 60hz
             Debug.Log("Counter is set to " + randomWaitTime);
             speed = -speed;
             goingDown = false;
@@ -48,6 +50,7 @@ public class MovePlant : MonoBehaviour
         } else {
             if (randomWaitTime < 0) {
                 doneRandomWait = true;
+                Debug.Log("done");
             } else {
                 randomWaitTime -= 1;
             }
