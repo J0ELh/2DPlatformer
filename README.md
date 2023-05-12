@@ -1,8 +1,8 @@
 # Super Mario Bros.
 Made by Joel, Christina, and Tony
 
-Progress Demo Videos: 
-May 12th: https://youtu.be/tQKfCt1EkaA
+Progress Demo Videos: \
+May 12th: https://youtu.be/tQKfCt1EkaA \
 May 5th: https://youtu.be/cLtZ2l5GBCw
 
 Current progress: 
