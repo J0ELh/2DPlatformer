@@ -2447,7 +2447,7 @@ GameObject:
   - component: {fileID: 6018449473857564717}
   - component: {fileID: 2833699607019287040}
   m_Layer: 0
-  m_Name: mario_v2
+  m_Name: tilemap_palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
