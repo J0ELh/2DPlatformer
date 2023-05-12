@@ -10,12 +10,12 @@ public class Ground : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision) {
         EvaluateCollision(collision);
-        RetrieveFriction(collision);
+        // RetrieveFriction(collision);     // not sure why this is creating nullptr exception
     }
 
     private void OnCollisionStay2D(Collision2D collision) {
         EvaluateCollision(collision);
-        RetrieveFriction(collision);
+        // RetrieveFriction(collision);     // not sure why this is creating nullptr exception
     }
 
     private void OnCollisionExit2D(Collision2D collision) {
