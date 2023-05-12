@@ -1,7 +1,9 @@
 # Super Mario Bros.
 Made by Joel, Christina, and Tony
 
-Demo Video: https://youtu.be/cLtZ2l5GBCw
+Progress Demo Videos: 
+May 12th: https://youtu.be/tQKfCt1EkaA
+May 5th: https://youtu.be/cLtZ2l5GBCw
 
 Current progress: 
-![image](https://user-images.githubusercontent.com/109251338/236598282-dba807e9-2aac-411f-b44b-753ca7c9aece.png)
+![image](https://github.com/J0ELh/2DPlatformer/assets/109251338/e78f2588-2de2-431a-b190-0decd2707082)
