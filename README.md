@@ -2,6 +2,7 @@
 Made by Joel, Christina, and Tony
 
 Progress Demo Videos: \
+May 14th: https://youtu.be/bDHhSSt91Vc \
 May 12th: https://youtu.be/tQKfCt1EkaA \
 May 5th: https://youtu.be/cLtZ2l5GBCw
 
