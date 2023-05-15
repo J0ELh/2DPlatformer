@@ -54,7 +54,7 @@ public class MovePlant : MonoBehaviour
             } else {
                 randomWaitTime -= 1;
             }
-            // Debug.Log(randomWaitTime);
+            Debug.Log(randomWaitTime);
             
         }
         // Debug.Log(speed);

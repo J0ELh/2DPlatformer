@@ -5,9 +5,9 @@ using UnityEngine;
 public class QuestionBlockAnimation : MonoBehaviour
 {
     private Collider2D head_hit;
-    [SerializeField] private Transform head_transform;
-    [SerializeField] private LayerMask ground_layer;
-    [SerializeField] private Animator anim;
+    [SerializeField] private Transform question_block;
+    [SerializeField] private LayerMask head_layer;
+    private Animator anim;
 
     void Start() {
         anim = GetComponent<Animator>();
@@ -15,11 +15,18 @@ public class QuestionBlockAnimation : MonoBehaviour
 
     void Update()
     {
-        head_hit = Physics2D.OverlapArea(new Vector2(head_transform.position.x - 0.49f, head_transform.position.y - 0.5f), 
-            new Vector2(head_transform.position.x + 0.49f, head_transform.position.y + 0.5f), ground_layer);
-        
-        if (head_hit && head_hit.gameObject.tag == "Question Block")
-            anim.SetTrigger("Hit");
-            
+        head_hit = Physics2D.OverlapArea(new Vector2(question_block.position.x - 0.49f, question_block.position.y - 0.5f), 
+            new Vector2(question_block.position.x + 0.49f, question_block.position.y + 0.5f), head_layer);
+        Debug.Log(question_block.position);
+        // int i = 0;
+        // while (i < animators.Length && anim != animators[i]) i++;
+        // string trigger = "Hit " + (char)(i + 48 + 1);
+
+        if (head_hit) {
+            anim.SetBool("Hit", true);
+        } else {
+            anim.SetBool("Hit", false);
+        }
+
     }
 }
