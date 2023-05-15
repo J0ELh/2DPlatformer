@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
 
-        grounded = Physics2D.OverlapCircle(grounded_check.position, 0.2f, ground_layer);
+        grounded = Physics2D.OverlapCircle(grounded_check.position, 0.4f, ground_layer);
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded) {
             rb.velocity = new Vector2(rb.velocity.x, jump_power);

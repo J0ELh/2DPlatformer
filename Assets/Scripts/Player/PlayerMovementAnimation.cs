@@ -20,7 +20,9 @@ public class PlayerMovementAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        is_grounded = Physics2D.OverlapCircle(grounded_check.position, 0.2f, ground_layer);
+        // is_grounded = Physics2D.OverlapCircle(grounded_check.position, 0.4f, ground_layer);
+        is_grounded = Physics2D.OverlapArea(new Vector2(grounded_check.position.x - 0.49f, grounded_check.position.y - 0.1f), 
+            new Vector2(grounded_check.position.x + 0.49f, grounded_check.position.y + 0.1f), ground_layer);
 
         if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W)) {
             anim.SetBool("is_grounded", false);
