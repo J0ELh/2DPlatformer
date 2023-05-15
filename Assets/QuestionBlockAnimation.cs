@@ -17,10 +17,6 @@ public class QuestionBlockAnimation : MonoBehaviour
     {
         head_hit = Physics2D.OverlapArea(new Vector2(question_block.position.x - 0.49f, question_block.position.y - 0.5f), 
             new Vector2(question_block.position.x + 0.49f, question_block.position.y + 0.5f), head_layer);
-        Debug.Log(question_block.position);
-        // int i = 0;
-        // while (i < animators.Length && anim != animators[i]) i++;
-        // string trigger = "Hit " + (char)(i + 48 + 1);
 
         if (head_hit) {
             anim.SetBool("Hit", true);

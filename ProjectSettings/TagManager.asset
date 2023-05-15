@@ -14,7 +14,7 @@ TagManager:
   - UI
   - ground
   - head_layer
-  - 
+  - feet_layer
   - 
   - 
   - 
@@ -47,4 +47,7 @@ TagManager:
     locked: 0
   - name: foreground
     uniqueID: 3108668747
+    locked: 0
+  - name: player
+    uniqueID: 937766005
     locked: 0
