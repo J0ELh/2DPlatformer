@@ -20,6 +20,7 @@ public class Move : MonoBehaviour
     private float acceleration;
     private bool onGround;
 
+    [SerializeField] private TMPro.TextMeshProUGUI score_text;
     private Animator anim;
     [SerializeField] private Transform head_check;
     [SerializeField] private LayerMask feet_layer;
@@ -27,6 +28,8 @@ public class Move : MonoBehaviour
     [SerializeField] private int bounce_power;
     private Collider2D stomped;
     private bool dead = false;
+    [SerializeField] private int score_increment;
+    private bool score_incrememnted = false;
     [SerializeField] private float despawn_cd = 0.1f;
 
     // Start is called before the first frame update
@@ -53,6 +56,13 @@ public class Move : MonoBehaviour
             Destroy(GetComponent<BoxCollider2D>());
             Destroy(GetComponent<EdgeCollider2D>());
             Destroy(gameObject, despawn_cd);
+
+            if (!score_incrememnted) {
+                int score_i = System.Int32.Parse(score_text.text) + score_increment;
+                score_text.text = score_i.ToString();
+                score_text.text.PadLeft(6, '0');
+                score_incrememnted = true;
+            }
         }
 
         

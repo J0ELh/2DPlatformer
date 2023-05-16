@@ -8,6 +8,9 @@ public class QuestionBlockAnimation : MonoBehaviour
     [SerializeField] private Transform question_block;
     [SerializeField] private LayerMask head_layer;
     private Animator anim;
+    [SerializeField] private TMPro.TextMeshProUGUI score_text;
+    [SerializeField] private int score_increment;
+    private bool score_incrememnted = false;
 
     void Start() {
         anim = GetComponent<Animator>();
@@ -20,6 +23,12 @@ public class QuestionBlockAnimation : MonoBehaviour
 
         if (head_hit) {
             anim.SetBool("Hit", true);
+            if (!score_incrememnted) {
+                int score_i = System.Int32.Parse(score_text.text) + score_increment;
+                score_text.text = score_i.ToString();
+                score_text.text.PadLeft(6, '0');
+                score_incrememnted = true;
+            }
         } else {
             anim.SetBool("Hit", false);
         }
