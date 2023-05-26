@@ -12,6 +12,16 @@ public class MovePlant : MonoBehaviour
     private Vector3 targetHeight;
     private Vector3 baseHeight;
     private float speed = 1f;
+    [SerializeField] private GameObject mario;
+    [SerializeField] private Animator mario_anim;
+    [SerializeField] private float despawn_cd;
+
+    void OnCollisionEnter2D(Collision2D col) {
+        if (col.gameObject == mario) {
+            mario_anim.SetBool("dead", true);
+            Destroy(mario, despawn_cd);
+        }
+    }
 
     void Start()
     {

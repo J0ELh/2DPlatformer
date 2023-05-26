@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/mario_level.unity
     guid: 423636ae048646940a7c7ed2c5da684e
+  - enabled: 1
+    path: Assets/Scenes/game_over.unity
+    guid: 9b56d4b2e3e33c549925d5b13b237033
   m_configObjects: {}
