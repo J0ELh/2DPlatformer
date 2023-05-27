@@ -31,6 +31,8 @@ public class Move : MonoBehaviour
     [SerializeField] private int score_increment;
     private bool score_incrememnted = false;
     [SerializeField] private float despawn_cd = 0.1f;
+    private AudioSource source;
+    [SerializeField] private AudioClip squish;
 
     // Start is called before the first frame update
     void Awake()
@@ -40,7 +42,10 @@ public class Move : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+    void Start() {
+        source = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
 
@@ -58,6 +63,7 @@ public class Move : MonoBehaviour
             Destroy(gameObject, despawn_cd);
 
             if (!score_incrememnted) {
+                source.PlayOneShot(squish);
                 int score_i = System.Int32.Parse(score_text.text) + score_increment;
                 score_text.text = score_i.ToString();
                 score_text.text.PadLeft(6, '0');

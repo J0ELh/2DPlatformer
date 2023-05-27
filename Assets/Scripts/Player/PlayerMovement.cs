@@ -14,8 +14,13 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Transform grounded_check;
     public LayerMask ground_layer;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip jump;
 
 
+    void Start() {
+        source.Play();
+    }
 
     // Update is called once per frame
     void Update()
@@ -24,13 +29,15 @@ public class PlayerMovement : MonoBehaviour
 
         grounded = Physics2D.OverlapCircle(grounded_check.position, 0.4f, ground_layer);
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded) {
+        if (rb && Input.GetKeyDown(KeyCode.Space) && grounded) {
             rb.velocity = new Vector2(rb.velocity.x, jump_power);
+            source.PlayOneShot(jump);
         }
 
     }
 
     void FixedUpdate() {
-        rb.velocity = new Vector2(speed * horizontalInput, rb.velocity.y);
+        if (rb)
+            rb.velocity = new Vector2(speed * horizontalInput, rb.velocity.y);
     }
 }

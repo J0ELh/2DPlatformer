@@ -43,15 +43,13 @@ public class PlayerMovementAnimation : MonoBehaviour
             anim.SetBool("running_left", false);
         }
 
-        bool stationary = rb.velocity.x < STATIONARY_DELTA && rb.velocity.x > -STATIONARY_DELTA;
-        if (stationary) {
-            anim.SetBool("running_right", false);
-            anim.SetBool("running_left", false);
+        if (rb) {
+            bool stationary = rb.velocity.x < STATIONARY_DELTA && rb.velocity.x > -STATIONARY_DELTA;
+            if (stationary) {
+                anim.SetBool("running_right", false);
+                anim.SetBool("running_left", false);
+            }
         }
-
-
-
-
 
     }
 }

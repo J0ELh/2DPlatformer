@@ -7,21 +7,10 @@ public class MovePlant : MonoBehaviour
     private bool goingDown = false;
     private bool doneRandomWait = true;
     private float randomWaitTime;
-    // private Transform t;
-    // Start is called before the first frame update
     private Vector3 targetHeight;
     private Vector3 baseHeight;
     private float speed = 1f;
-    [SerializeField] private GameObject mario;
-    [SerializeField] private Animator mario_anim;
-    [SerializeField] private float despawn_cd;
 
-    void OnCollisionEnter2D(Collision2D col) {
-        if (col.gameObject == mario) {
-            mario_anim.SetBool("dead", true);
-            Destroy(mario, despawn_cd);
-        }
-    }
 
     void Start()
     {
@@ -42,12 +31,12 @@ public class MovePlant : MonoBehaviour
             speed = -speed;
             goingDown = true;
             doneRandomWait = false;
-            randomWaitTime =  (900000f  + Random.Range(0f, 20* 90000f)) * Time.deltaTime; //assuming probably refresh rate around 60hz
+            randomWaitTime =  Random.Range(0f, 5f); //assuming probably refresh rate around 60hz
             // Debug.Log("greater");
         }
         else if (transform.position.y < baseHeight.y && goingDown) {
             doneRandomWait = false;
-            randomWaitTime =  (900000f  + Random.Range(0f, 20* 90000f)) * Time.deltaTime; //assuming probably refresh rate around 60hz
+            randomWaitTime =  Random.Range(0f, 5f); //assuming probably refresh rate around 60hz
             // Debug.Log("Counter is set to " + randomWaitTime);
             speed = -speed;
             goingDown = false;
@@ -62,7 +51,7 @@ public class MovePlant : MonoBehaviour
                 doneRandomWait = true;
                 // Debug.Log("done");
             } else {
-                randomWaitTime -= 1;
+                randomWaitTime -= Time.deltaTime;
             }
             // Debug.Log(randomWaitTime);
             
