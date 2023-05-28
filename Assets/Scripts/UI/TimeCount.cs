@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TimeCount : MonoBehaviour
 {
@@ -18,5 +19,8 @@ public class TimeCount : MonoBehaviour
     {
         time_text.text = ((int)start_time).ToString();
         start_time -= Time.deltaTime;
+        if (System.Int32.Parse(time_text.text) <= 0) {
+            SceneManager.LoadScene(2);
+        }
     }
 }

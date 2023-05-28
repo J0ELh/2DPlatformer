@@ -377,7 +377,7 @@ TextureImporter:
         width: 15
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -385,6 +385,69 @@ TextureImporter:
       bones: []
       spriteID: 10ec44f4d11e8724e83174d43013a788
       internalID: 1264901957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mario_animations_1
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 143
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6b4cdd80916a3448ba85595e0bb928
+      internalID: -429321389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mario_animations_2
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 142
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8fce2252e03b9347bbaa2b7abb22063
+      internalID: -1379477011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mario_animations_3
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 186
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a32d8ea003bd2a45a33ad2b0c09dd03
+      internalID: -2065245210
       vertices: []
       indices: 
       edges: []
@@ -413,6 +476,9 @@ TextureImporter:
       mario_8: -782993123
       mario_9: 308584419
       mario_animations_0: 1264901957
+      mario_animations_1: -429321389
+      mario_animations_2: -1379477011
+      mario_animations_3: -2065245210
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

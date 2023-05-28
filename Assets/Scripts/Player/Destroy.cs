@@ -7,7 +7,6 @@ public class Destroy : MonoBehaviour
 {
     [SerializeField] private TMPro.TextMeshProUGUI lives;
     [SerializeField] private Animator anim;
-    [SerializeField] private float despawn_cd;
     [SerializeField] private LayerMask death;
     public static int lives_counter = 3;
     [SerializeField] private AudioSource source;
@@ -23,10 +22,9 @@ public class Destroy : MonoBehaviour
         source.PlayOneShot(dead_sound);
         anim.SetBool("dead", true);
         Destroy(gameObject.GetComponent<Rigidbody2D>());
-        Destroy(gameObject, despawn_cd);
     }
 
-    void OnDestroy() {
+    public void respawn() {
         lives_counter--;
 
         if (lives_counter <= 0) {
